@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="Styles/Home_pg_styles.css">
+	<link rel="stylesheet" type="text/css" href="Styles/Shoe_pages.css">
+	<script src="https://kit.fontawesome.com/c29edecf44.js" crossorigin="anonymous"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400&display=swap" rel="stylesheet">
+	<title>Dr.Martens_1460</title>
+</head>
+<body>
+	<div class="hamburger-menu">
+		<input id="menu__toggle" type="checkbox" />
+		<label class="menu__btn" for="menu__toggle">
+			<span></span>
+		</label>
+		<div class="menu__box">
+			<ul class="wr">
+				<li><a class="menu__item" href="index.html">Home</a></li>
+				<li><a class="menu__item" href="Order.html">CREATE ORDER</a></li>
+			</ul>
+		</div>
+	</div>
+	<header>	
+		<div class="head_wrap">
+			
+		</div>
+	</header>
+	<div  class="nav_panel">
+		<nav class="navigation">
+			<div class="nav_b_wr">
+				<a href="index.html">
+					Shop
+				</a>
+			</div>
+			<div class="nav_b_wr">
+				<a href="Order.html">
+					CREATE ORDER	
+				</a>
+			</div>
+
+		</nav>
+	</div>
+	<main>
+		<div class="main_wrap">
+			<div class="order_card">
+				<div class="Shoe_galary">
+					<img src="">
+					<div class="arrow_right" onclick="right()">
+						<button class="right_b">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+						</button>
+						
+					</div>
+					<div class="arrow_left">
+						<button class="left_b" onclick="left()">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" >
+								<path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/>
+							</svg>
+						</button>
+					</div>
+					<div class="Mini_shoe_gal">
+						<div class="pick_img">
+							<img src="Styles/Pics/Shoes/Mart/1.png" onclick="change_bg(this)" alt="">
+						</div>
+						<div class="pick_img">
+							<img src="Styles/Pics/Shoes/Mart/2.png" onclick="change_bg(this)" alt="">
+						</div>
+						<div class="pick_img">
+							<img src="Styles/Pics/Shoes/Mart/3.png" onclick="change_bg(this)" alt="">
+						</div>
+						<div class="pick_img">
+							<img src="Styles/Pics/Shoes/Mart/4.png" onclick="change_bg(this)" alt="">
+						</div>
+						<div class="pick_img">
+							<img src="Styles/Pics/Shoes/Mart/5.png" onclick="change_bg(this)" alt="">
+						</div>
+					</div>
+				</div>
+				<div class="Shoe_stats">
+					<div class="Name">
+						<h3>
+							Dr. Martens 1460 Greasy
+						</h3>
+					</div>
+					<div class="price">
+						<span>
+							<i>Price</i>: 10800 rubles
+						</span>
+					</div>
+					<div class = "size_wrap">
+						<span>
+							<h4>
+								Select size:
+							</h4>
+						</span>
+						<div class="size">
+							<div onclick="size_pic(this)">EU 36</div>
+							<div onclick="size_pic(this)">EU 37</div>
+							<div onclick="size_pic(this)">EU 38</div>
+							<div onclick="size_pic(this)">EU 39</div>
+							<div onclick="size_pic(this)">EU 40</div>
+							<div onclick="size_pic(this)">EU 41</div>
+							<div onclick="size_pic(this)">EU 42</div>
+							<div onclick="size_pic(this)">EU 43</div>
+							<div onclick="size_pic(this)">EU 44</div>
+						</div>
+					</div>
+					<div class="Delivery">
+						<h4>
+							Информация о доставке:
+						</h4>
+						<p>
+							Доставка товаров осуществляется во все регионы России. Возможна доставка "Почтой России", "CDEK", "Boxberry".
+							Отправка товара осуществляется в тот день, когда с вами свяжется консультант и уточнит детали заказа. <b>Стоимость доставки не входит в стоимость товара и варируется от региона.</b>
+						</p>	
+					</div>
+					<div class="Buy">
+						<input type="submit" onclick="Buy()" name="Buy" id="Buy" value="Buy">
+					</div>
+				</div>
+				<div class="Shoe_descr">
+					<div class="description">
+						<p >
+							<b>Dr. Martens 1460</b> – первая и самая популярная модель Dr. Martens. Узнаваемый стиль с 8 парами проушин остался верен ДНК бренда спустя годы, включая гладкую и прочную кожу Smooth Leather. Подошва из полимера, мгновенно узнаваемая за счет рифленых краев, рассчитана на всепогодные условия. Мягкая амортизация AirWair отвечает за комфорт обуви в течение всего дня. Яркие детали – петля со слоганом «With bouncing soles» и желтая строчка. Конструкция создана по традиционной английской технологии Goodyear Welt.
+						</p>
+					</div>
+					<div class="details">
+						<b>Cостав</b>
+						<ul>
+							<li>Верх:
+							натуральная кожа полиэстер</li>
+							<li>Материал:
+							25% Кожа 75% Полиэстер</li>
+							
+						</ul>
+					</div>
+					<div class="benifits">
+						<b>Особенности</b>
+						<ul>
+							<li>Эластичная кожа Nappa</li>
+							<li>Подошва AirWair
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="Like">
+				<h3>
+					Вам также может понравиться:
+				</h3>
+			</div>
+			<div class="Mini_Links">
+				<div class="arrow_right_windows" >
+					<button class="right_b_w" onclick="right_scroll(this)">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+					</button>
+				</div>
+				<div class="pad">
+					<div class="ref_wrap">
+						<a id="SomeId" href="">
+							<div class="small_shoe_ref aa">
+								<div class="small_link_pic ">
+									
+								</div>
+								<span class="mini_descr"></span>
+							</div>	
+						</a>
+						<a href="">
+							<div class="small_shoe_ref ab">
+								<div class="small_link_pic">
+
+								</div>
+								<span class="mini_descr"></span>
+
+							</div>
+						</a>
+						<a href="">
+							<div class="small_shoe_ref ac">
+								<div class="small_link_pic">
+								</div>
+								<span class="mini_descr"></span>
+
+							</div>
+						</a>
+						<a href="">
+							<div class="small_shoe_ref ad">
+								<div class="small_link_pic">
+
+								</div>
+								<span class="mini_descr"></span>
+
+							</div>
+						</a>
+						<a href="">
+							<div class="small_shoe_ref ae">
+								<div class="small_link_pic">
+
+								</div>
+								<span class="mini_descr"></span>
+
+							</div>	
+						</a>
+						<a href="">
+							<div class="small_shoe_ref af">
+								<div class="small_link_pic">
+
+								</div>
+								<span class="mini_descr"></span>
+
+							</div>
+						</a>
+						<a href="">
+							<div class="small_shoe_ref ag ">
+								<div class="small_link_pic">
+
+								</div>
+								<span class="mini_descr"></span>
+
+							</div>
+						</a>
+						<a href="">
+							<div class="small_shoe_ref ah">
+								<div class="small_link_pic">
+								</div>
+								<span class="mini_descr"></span>
+							</div>
+						</a>
+					</div>	
+				</div>
+				<div class="arrow_left_windows">
+					<button class="left_b_w">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" >
+							<path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/>
+						</svg>
+					</button>
+				</div>
+			</div>	
+		</div>
+	</main>
+	<footer>
+		<div class="footer_wrap">
+			<div class="notes">
+				<div class="social_links">
+					<h4>
+						Следите за нами в социальных сетях:
+					</h4>
+					<ul>
+						<li>
+							<a href="">
+								<svg id="Icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 215 215"><defs><style>.cls-1{fill:#fff;}</style></defs><g id="Facebook"><circle id="Background" cx="107.5" cy="107.5" r="107.5"/><path id="Facebook-2" data-name="Facebook" class="cls-1" d="M1223.69,116.65h18l3.43-22.45h-21.41V79.64c0-6.14,3-12.13,12.58-12.13H1246V48.4a117.7,117.7,0,0,0-17.28-1.52c-17.63,0-29.15,10.75-29.15,30.22V94.2H1180v22.45h19.59v54.26h24.12Z" transform="translate(-1108)"/></g></svg>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<svg id="Icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 215 215"><defs><style>.cls-1{fill:#fff;fill-rule:evenodd;}</style></defs><g id="Telegram"><circle id="Background" cx="107.5" cy="107.5" r="107.5"/><path id="Telegram-2" data-name="Telegram" class="cls-1" d="M603.31,105.65q46.89-20.43,62.53-26.94c29.78-12.38,36-14.53,40-14.61A7.09,7.09,0,0,1,710,65.35a4.49,4.49,0,0,1,1.53,2.9,19.25,19.25,0,0,1,.18,4.23c-1.61,17-8.6,58.09-12.15,77.08-1.5,8-4.46,10.73-7.33,11-6.22.57-11-4.12-17-8.07-9.44-6.19-14.77-10-23.93-16.08-10.59-7-3.72-10.81,2.31-17.07,1.58-1.64,29-26.6,29.54-28.86a2.18,2.18,0,0,0-.5-1.9,2.49,2.49,0,0,0-2.22-.21q-1.41.31-45.22,29.89-6.42,4.41-11.63,4.3c-3.83-.09-11.19-2.17-16.67-4-6.71-2.18-12-3.33-11.58-7Q595.7,108.68,603.31,105.65Z" transform="translate(-554)"/></g></svg>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<svg id="Icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 215 215"><defs><style>.cls-1{fill:#fff;}</style></defs><g id="Facebook"><circle id="Background" cx="107.5" cy="107.5" r="107.5"/><path id="Facebook-2" data-name="Facebook" class="cls-1" d="M1223.69,116.65h18l3.43-22.45h-21.41V79.64c0-6.14,3-12.13,12.58-12.13H1246V48.4a117.7,117.7,0,0,0-17.28-1.52c-17.63,0-29.15,10.75-29.15,30.22V94.2H1180v22.45h19.59v54.26h24.12Z" transform="translate(-1108)"/></g></svg>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<svg id="Icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 215 215"><defs><style>.cls-1,.cls-2{fill:#fff;}.cls-2{fill-rule:evenodd;}</style></defs><g id="WhatsApp"><circle id="Background" cx="107.5" cy="107.5" r="107.5"/><g id="WhatsApp-2" data-name="WhatsApp"><path id="WhatsApp-3" data-name="WhatsApp" class="cls-1" d="M885.91,161l7.55-27.56a53.18,53.18,0,1,1,46.09,26.64h0a53.18,53.18,0,0,1-25.41-6.48Zm29.5-17,1.62,1a44.21,44.21,0,0,0,22.5,6.17h0a44.22,44.22,0,1,0-37.45-20.72l1,1.67-4.47,16.31Z" transform="translate(-831)"/><path id="WhatsApp-4" data-name="WhatsApp" class="cls-2" d="M966.34,119.54c-.33-.56-1.22-.89-2.55-1.55s-7.86-3.88-9.08-4.33-2.1-.66-3,.67-3.43,4.32-4.2,5.21-1.56,1-2.88.33A36.31,36.31,0,0,1,934,113.28a40,40,0,0,1-7.39-9.21c-.78-1.33-.09-2,.58-2.71s1.33-1.56,2-2.33a8.84,8.84,0,0,0,1.33-2.22,2.47,2.47,0,0,0-.11-2.33c-.33-.66-3-7.2-4.1-9.86s-2.17-2.24-3-2.29-1.66,0-2.54,0A4.89,4.89,0,0,0,917.17,84,14.91,14.91,0,0,0,912.52,95c0,6.54,4.76,12.86,5.43,13.75s9.37,14.31,22.7,20.06a75.55,75.55,0,0,0,7.58,2.8,18.27,18.27,0,0,0,8.37.53c2.55-.38,7.86-3.22,9-6.32S966.67,120.09,966.34,119.54Z" transform="translate(-831)"/></g></g></svg>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="company_info">
+					<h4>
+						Больше информации о нас:
+					</h4>
+					<p>
+						Сегодня все больше и больше крупных зарубежных брендов обуви уходят из России, однако желание купить ту или иную пару остается. <b>Dots.</b> - молодой, но перспективный магазин брендовой обуви. На данной площадке ВЫ можете не только приобретси обуви, которая находится в наличии, но и совершить заказ той или иной пары, которую ВЫ так давно вожделеете.
+					</p>
+				</div>
+				<div class="contacts">
+					<h4>
+						Давайте оставаться на связи:
+					</h4>
+					<p>
+						<b>Наш офис расположен по адресу</b>:<br> 119049 г. Москва, ул. Донская, д. 8 стр. 1
+					</p>
+				</div>
+				<div class="rights">
+					<span>
+						We're talking away
+						I don't know what
+						I'm to say I'll say it anyway
+						Today's another day to find you
+						Shying away
+						I'll be coming for your love, okay?
+						Take on me (take on me)
+						Take me on (take on me)
+						I'll be gone
+						In a day or two
+					</span>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<script type="text/javascript" src="Scripts/Shoes_pics.js"></script>
+</body>
+</html>

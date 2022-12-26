@@ -1,0 +1,755 @@
+body{
+	margin: 0;
+	padding: 0 20px 20px 20px;
+	background-color: rgba(255, 255, 255, 0.2);
+	background-image:  radial-gradient(#000000 0.75px, transparent 0.75px), radial-gradient(#000000 0.75px, rgba(255, 255, 255, 0.2) 0.75px);
+	background-size: 30px 30px;
+	background-position: 0 0,15px 15px;
+	position: relative;
+}
+a{
+	text-decoration: none;
+}
+span{
+	text-decoration: none;
+}
+ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+li{
+	margin: 0;
+	padding: 0;
+}
+h1,h2,h3,h4{
+	margin: 0;
+	padding: 0;
+}
+
+/********************Header*****************/
+.nav_panel{
+	margin-bottom: 8px;
+}
+
+/********************Header*****************/
+/*=======================Phone menu=======================*/
+#menu__toggle {
+    opacity: 0;
+}
+
+.menu__btn {
+    display: flex; /* используем flex для центрирования содержимого */
+    align-items: center;  /* центрируем содержимое кнопки */
+    position: fixed;
+    top: 20px;
+	z-index: 4;
+    left: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+}
+/* добавляем "гамбургер" */
+.hamburger-menu{
+    opacity: 0;
+    position: absolute;
+}
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #616161;
+}
+.menu_fav{
+	cursor: pointer;
+
+}
+.menu_fav span{
+	padding: 0;
+}
+.menu__btn > span::before {
+    content: '';
+    top: -8px;
+}
+.menu__btn > span::after {
+    content: '';
+    top: 8px;
+}
+/* контейнер меню */
+.menu__box {
+	z-index: 3;
+	position: fixed;
+	 top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    background-color: rgba(0, 0, 0, 1);
+	background-image:  radial-gradient(#FFF 0.75px, transparent 0.75px), radial-gradient(#FFF 0.75px, rgba(255, 255, 255, 0.2) 0.75px);
+	background-size: 30px 30px;
+	background-position: 0 0,15px 15px;
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+}
+.wr{
+    display: flex;
+    justify-content: center	;
+    flex-direction: row;
+
+}
+/* элементы меню */
+.menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: white;
+   	text-transform: uppercase;
+	font-family: 'Quicksand', sans-serif;
+	text-align: center;
+	font-size: 25pt;
+    text-decoration: none;
+}
+#menu__toggle:checked ~ .menu__btn > span {
+  transform: rotate(45deg);
+
+}   
+#menu__toggle:checked ~ .menu__btn > span::before {
+    top: 0;
+
+
+}
+#menu__toggle:checked ~ .menu__btn > span::after {
+    top: 0;
+
+    transform: rotate(90deg);
+}
+#menu__toggle:checked ~ .menu__box {
+    visibility: visible;
+    left: 0;
+}
+
+/*=======================Phone menu=======================*/
+
+/********************Main*****************/
+.main_wrap{
+	width: 100%;
+}
+.order_card {  
+	min-height: 1000px;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 67% 32%;
+	grid-template-rows:30% 24% 	1fr;
+	grid-auto-columns: 1fr;
+	grid-auto-rows: 1fr;
+	gap: 3% 1%;
+	grid-auto-flow: row;
+	grid-template-areas:
+	"Shoe_galary Shoe_stats"
+	"Shoe_galary Shoe_stats"
+	"Shoe_descr Shoe_descr";
+}
+
+.Shoe_galary { 
+	min-height: 450px;
+	grid-area: Shoe_galary;
+	position: relative;
+	box-shadow: 0 0 10px rgba(0,0,0,1);
+
+}
+.Shoe_galary img{ 
+	width: 100%;
+	height: 100%;	
+}
+.arrow_left{
+	opacity: 0.7;
+	margin-left: 15px;
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	left: 0;
+	top: calc(50% - 25px);
+}
+.arrow_right{
+	opacity: 0.7;
+	margin-right: 15px;
+	width: 50px;
+	position: absolute;
+	height: 50px;
+	right: 0;
+	top: calc(50% - 25px);
+}
+.left_b, .right_b, .right_b_w,.left_b_w{
+	background: none;
+	border: none;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+
+}
+.left_b path, .right_b path{
+	cursor: pointer;
+}
+.Mini_shoe_gal{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	position: absolute;
+	align-items: center;
+	left: 0;
+	column-gap: 3%;
+	bottom: 2%;
+	width: calc(100% - 30px);
+	height: 20%;
+	padding: 0 15px 5px 15px;
+	
+}
+.pick_img{
+	max-height: 200px;
+	max-width: calc(100%/5 - 30px);
+	backdrop-filter: blur(5px) saturate(200%);
+}
+.pick_img img{
+	border-radius: 5px;
+	border: 1px solid;
+	cursor: pointer;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.Shoe_stats { 
+	background: rgb(245,247,250);
+	background: linear-gradient(180deg, rgba(245,247,250,1) 0%, rgba(184,198,219,1) 100%);
+	grid-area: Shoe_stats;
+	box-shadow: 0 0 10px rgba(0,0,0,1);
+	font-family: 'Montserrat', sans-serif;	
+
+	flex-direction: column;
+	padding: 30px 10px 30px 10px;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 8% 6% 1fr 1fr 5%;
+	grid-auto-columns: 1fr;
+	grid-auto-rows: 1fr;
+	gap: 3% 3%;
+	grid-auto-flow: row;
+	grid-template-areas:
+	"Name"
+	"price"
+	"size_wrap"
+	"Delivery"
+	"Buy"
+
+}
+
+.Name { 
+	grid-area: Name;
+	margin: auto;
+}
+
+.price { 
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	grid-area: price;
+
+	font-size: 15pt;
+	text-transform: uppercase;
+}
+.price i{
+	font-size: 16pt;
+	font-weight: bold;
+	font-style: normal;
+}
+
+.size_wrap { 
+	grid-area: size_wrap;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 16pt;
+
+}
+.size_wrap h4{
+	font-size: 18pt;
+	letter-spacing: 2px;
+
+}
+
+.Delivery { 
+	grid-area: Delivery;
+	display: flex;
+	flex-direction: column;
+	justify-content:start;
+	align-items: center;
+}
+.Delivery h4{
+	text-align: center;
+	letter-spacing: 2px;
+
+}
+.Delivery p{
+	line-height: 1.35em;
+	padding: 0 10px 0 20px;
+}
+.Shoe_stats h3{
+	font-size: 20pt;
+	text-align: center;
+}
+
+.size{
+    display: grid;
+    width: 85%;
+    grid-template-columns: repeat(3, 1fr);
+    gap:15px;
+    margin: 20px 0 20px 0;
+}
+.size div{
+	font-family: 'Raleway', sans-serif;
+	cursor: pointer;
+	border: 2px solid #a6a6a6;
+	border-radius: 4px;
+	font-size: 14pt;
+	text-align: center;
+}
+.size div:hover{
+	border: 2px solid;
+	transition: all 0.5s;
+}
+.size h4{
+	justify-self:start;
+}
+#Buy{
+	width: 90px;
+	height: 40px;
+	cursor: pointer;
+}
+.Buy{
+	grid-area: Buy;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.Buy_window{
+	z-index: 2;
+	height: 50%;
+	width: 40%;
+	font-weight: bold;
+	position: fixed;
+	border: 4px dotted;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	row-gap: 4%;
+	align-items: center;
+	top:25%;
+	left: 30%;
+	border-radius: 20px;
+  	background-color: rgba(255, 255, 255, 0.6);
+
+	backdrop-filter: blur(5px) saturate(200%);
+}
+.Buy_window h4{
+	text-transform: uppercase;
+	font-family: 'Quicksand', sans-serif;
+	color: black;
+	text-align: center;
+	font-size: 20pt;
+}
+.Size_wind{
+	text-transform: uppercase;
+	font-family: 'Quicksand', sans-serif;
+	color: black;
+	text-align: center;
+	font-size: 14pt;
+}
+.cont_wind,.name_wind {
+	font-size: 14pt;
+	font-family: 'Montserrat', sans-serif;
+	width: 60%;
+	height: 30px;
+}
+.Shoe_descr { 
+	height: 70%;
+	align-self: center;
+	box-shadow: 0 0 10px rgba(0,0,0,1);
+	padding: 2% 4%;
+	grid-area: Shoe_descr;
+	background-color: rgba(190,228,211,1);
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	grid-auto-columns: 1fr;
+	grid-auto-rows: 1fr;
+	gap: 4% 7%;
+	grid-auto-flow: row;
+	grid-template-areas:
+	"description description"
+	"details benifits";
+	font-size: 14pt;
+	letter-spacing: 2px;
+	font-family: 'Montserrat', sans-serif;
+	margin-bottom: 1%;
+}
+
+.description { 
+	height: 100%;
+	grid-area: description;
+	height: auto;
+ }
+.description p{
+}
+.details { grid-area: details;
+	display: flex;
+	flex-direction: column;
+	align-items:center;
+	justify-content: start;	
+}
+
+
+.benifits { grid-area: benifits;
+	display: flex;
+	flex-direction: column;
+	align-items:center;
+	justify-content: start;
+}
+.benifits li, .details li{
+	list-style-type: circle;
+}
+.Like{
+	margin: 15px 0 0 0;
+	border-top:5px dotted;
+	font-family: 'Montserrat', sans-serif;
+}
+.Like h3{
+	font-size: 20pt;
+	padding: 1% 2% 0 2%;
+	letter-spacing:0.6vw;
+}
+.Mini_Links{
+	height: 300px;
+	margin: 20px 0 0 0;
+	padding: 20px 50px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+.arrow_left_windows{
+	width: 50px;
+	height:  100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+
+}
+.pad{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+
+}
+.arrow_right_windows{
+	width: 50px;
+	height:  100%;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.ref_wrap{
+	position: absolute;
+	left: -25%;
+	top: 0;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 40px;
+}
+.small_shoe_ref{
+	background-color: #f2f2f2;
+	box-shadow: 0 0 10px rgba(0,0,0,1);
+	padding: 10px;
+	width: 220px;
+	height: 250px;
+	margin: 8px 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: column;
+}
+.small_link_pic{
+	padding-top: 5px;
+	width:90%;
+	height: 80%;
+	background: black;
+}
+.small_shoe_ref:hover{
+	transform: translateY(8px);
+	scale: 1.05;
+	transition: all 0.5s	;
+}
+.mini_descr{
+	margin: auto;
+	width:90%;
+	padding: 0;
+	font-family: 'Raleway', sans-serif;
+	font-size: 12pt;
+	text-align: center;
+	color:black;
+	text-transform: uppercase;
+}
+.fav_close{
+		opacity: 0.65;
+		cursor: pointer;
+	    transform: rotate(45deg);
+	}
+.fav_close,.fav_close::after {
+	display: block;
+	position: absolute;
+	right: 30px;
+	top: 30px;
+	width:30px;
+	height: 5px;
+	background-color: red;
+}
+.fav_close::after {
+	content: '';
+	transform: rotate(90deg);
+	top: 0;
+	right:  0;
+}
+
+/********************Main*****************/
+
+/********************Footer*****************/
+.footer_wrap{
+	border-top: 5px dotted;
+	min-height: 300px;
+	width: 100%;
+}
+.notes{  
+	width: calc(100% - 40px);
+	padding: 20px;
+	height: calc(100% - 40px);
+	font-family: 'Montserrat', sans-serif;
+	border-radius: 12px;
+	display: grid;
+	grid-template-columns: 1fr 30% 20%;
+	grid-template-rows: 1fr 10%;
+	grid-auto-columns: 1fr;
+	grid-auto-rows: 1fr;
+	gap: 6% 6%;
+	grid-auto-flow: row;
+	grid-template-areas:
+	"company_info contacts social_links"
+	"rights rights rights";
+	line-height: 1.6em;
+    color: black;
+    font-size: 13pt;
+}
+.notes h4{
+    color: black;
+    font-weight: bold;
+    font-size: 16pt;
+}
+.company_info { 
+	padding: 10px;
+	grid-area: company_info;
+	border: 2px solid;
+	background: rgb(231,239,249);
+	background: linear-gradient(180deg, rgba(231,239,249,1) 0%, rgba(207,219,246,1) 100%);
+}
+
+.social_links { 
+	padding: 10px;
+	border: 2px solid;
+	grid-area: social_links;
+	background: rgb(231,239,249);
+	background: linear-gradient(180deg, rgba(231,239,249,1) 0%, rgba(207,219,246,1) 100%);
+	background-color: white;
+}
+.social_links ul{
+	padding: 10%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: column;
+}
+.social_links li{
+	width: 40px;
+	height: 40px;
+	margin: 3%;
+}
+.social_links svg{
+	opacity: 0.6;
+	width: 100%;
+	width: 100%;
+}
+.social_links svg:hover{
+	opacity: 1;
+	scale: 1.2;
+	transition: all 0.6s;
+}
+.contacts { 
+	padding: 10px;
+	border: 2px solid;
+	background-color: white;
+	grid-area: contacts;
+	background: rgb(231,239,249);
+	background: linear-gradient(180deg, rgba(231,239,249,1) 0%, rgba(207,219,246,1) 100%);
+}
+
+.rights { 
+	font-size: 8pt;
+	border: 2px solid;
+	background: rgb(231,239,249);
+	background: linear-gradient(180deg, rgba(231,239,249,1) 0%, rgba(207,219,246,1) 100%);
+	background-color: white;
+	grid-area: rights;
+}
+
+/********************Footer*****************/
+
+@media screen and (min-width:320px) and (max-width:1000px){ /*Телефонная раскладка*/
+	.hamburger-menu{
+		opacity: 1;
+	}
+	.order_card {  
+		min-height: 1000px;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+	.main_wrap{
+		margin-top: 5%;
+	}
+	.Shoe_galary { 
+		margin-bottom: 4%;
+
+	}
+	.Shoe_galary img{ 
+		width: 100%;
+		height: 100%;
+	}
+
+	.pick_img{
+		max-height: 250px;
+		max-width: calc(100%/4 - 30px);
+		backdrop-filter: blur(5px) saturate(200%);
+	}
+	
+	.Shoe_stats { 
+		min-height: 600px;
+		margin-bottom: 4%;
+	}
+	
+	.Shoe_descr { 
+		width: 98%;
+		align-self: center;
+		box-shadow: 0 0 10px rgba(0,0,0,1);
+		padding: 2% 4%;
+		grid-area: Shoe_descr;
+		background-color: #bee4d3;
+		display: flex;
+		flex-direction: column;
+		padding: 1%;
+	}
+
+	.description { 
+		height: 100%;
+		grid-area: description;
+		height: auto;
+		padding: 1%;
+
+	 }
+	.details {
+		padding: 1%;
+		align-items: flex-start;
+		padding-left: 20px;
+	}
+
+	.benifits { 
+		padding: 1%;
+		align-items: flex-start;
+		padding-left: 20px;
+	}
+	.Mini_Links{
+		height: 260px;
+	
+	}
+	.pad{
+		width: 100%;
+		height:  100%;
+
+	}
+	.arrow_right_windows{
+		width: 50px;
+		height:  100%;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+
+	.small_shoe_ref{
+		width: 150px;
+		height: 180px;
+	}
+
+	.notes{  
+		width: calc(100% - 40px);
+		padding: 20px;
+		height: calc(100% - 20px);
+		display: flex;
+		flex-direction: column;
+	}
+	.company_info { 
+		margin-bottom: 3%;
+	}
+
+	.social_links { 
+		min-height: 90px;
+
+		margin-bottom: 3%;
+
+	}
+	.contacts { 
+		margin-bottom: 3%;
+	}
+
+	.social_links ul{
+		padding: 0 3%;
+		flex-direction: row;
+		justify-content: center;
+		column-gap: 5%;
+	}
+	.nav_panel{
+		position: absolute;
+		opacity: 0;
+		height: 0;
+		width: 0;
+		top: -100%;
+		left: -100%;
+	}
+	.Buy_window{
+	height: 90%;
+	width: 90%;
+	position: fixed;
+	border: 4px dotted;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	row-gap: 4%;
+	align-items: center;
+	top:5%;
+	left: 5%;
+	border-radius: 20px;
+  	background-color: rgba(255, 255, 255, 0.9);
+	backdrop-filter: blur(5px) saturate(200%);
+}
+}
+/*=======================MEDIA=======================*/

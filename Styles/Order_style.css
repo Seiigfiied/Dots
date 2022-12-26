@@ -1,0 +1,462 @@
+
+
+/*=======================Phone menu=======================*/
+#menu__toggle {
+    opacity: 0;
+}
+
+.menu__btn {
+    display: flex; /* используем flex для центрирования содержимого */
+    align-items: center;  /* центрируем содержимое кнопки */
+    position: fixed;
+    top: 20px;
+	z-index: 4;
+    left: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+}
+/* добавляем "гамбургер" */
+.hamburger-menu{
+    opacity: 0;
+    position: absolute;
+}
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #616161;
+}
+.menu_fav{
+	cursor: pointer;
+
+}
+.menu_fav span{
+	padding: 0;
+}
+.menu__btn > span::before {
+    content: '';
+    top: -8px;
+}
+.menu__btn > span::after {
+    content: '';
+    top: 8px;
+}
+/* контейнер меню */
+.menu__box {
+	z-index: 3;
+	position: fixed;
+	 top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    background-color: rgba(0, 0, 0, 1);
+	background-image:  radial-gradient(#FFF 0.75px, transparent 0.75px), radial-gradient(#FFF 0.75px, rgba(255, 255, 255, 0.2) 0.75px);
+	background-size: 30px 30px;
+	background-position: 0 0,15px 15px;
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+}
+.wr{
+    display: flex;
+    justify-content: center	;
+    flex-direction: row;
+
+}
+/* элементы меню */
+.menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: white;
+   	text-transform: uppercase;
+	font-family: 'Quicksand', sans-serif;
+	text-align: center;
+	font-size: 25pt;
+    text-decoration: none;
+}
+#menu__toggle:checked ~ .menu__btn > span {
+  transform: rotate(45deg);
+
+}   
+#menu__toggle:checked ~ .menu__btn > span::before {
+    top: 0;
+
+
+}
+#menu__toggle:checked ~ .menu__btn > span::after {
+    top: 0;
+
+    transform: rotate(90deg);
+}
+#menu__toggle:checked ~ .menu__box {
+    visibility: visible;
+    left: 0;
+}
+
+/*=======================Phone menu=======================*/
+/*========================Order Window====================*/
+.order_main {
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+}
+
+.order_card { 
+	padding: 10px;
+	font-family: 'Raleway', sans-serif;
+	background: rgb(61,115,104);
+	background: linear-gradient(0, rgba(61,115,104,1) 0%, rgba(233,188,183,1) 100%);
+	font-size: 1.5em;
+	box-shadow: 0 0 10px rgba(0,0,0,1);
+	opacity: 1;
+	width: 50%;
+	min-height: 70%;
+	backdrop-filter: blur(20px) saturate(200%);
+	background-color: rgba(255, 255, 255, 0.38);
+	border-radius: 12px;
+	border: 1px solid rgba(209, 213, 219, 0.3);	 
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 9% 1fr 1fr calc(45% - 20px) 10%;
+	grid-auto-columns: 1fr;
+	grid-auto-rows: 1fr;
+	gap: 3% 3%;
+	grid-auto-flow: row;
+	grid-template-areas:
+	"Order_title Order_title"
+	"User_name_cont User_Surname_cont"
+	"User_contact_cont User_file_cont"
+	"Shoe_desc_cont Shoe_desc_cont"
+	"submition_cont submition_cont";
+}
+
+.Order_title {
+	grid-area: Order_title;
+	font-size: 1.7em;
+	text-align: center;
+}
+
+.User_name_cont { 
+	grid-area: User_name_cont;
+	display: flex;
+	flex-direction: column;
+}
+
+.User_Surname_cont { 
+	grid-area: User_Surname_cont;
+	display: flex;
+	flex-direction: column;
+}
+
+.User_contact_cont { 
+	grid-area: User_contact_cont;
+	display: flex;
+	flex-direction: column;
+}
+
+.Shoe_desc_cont { 
+	grid-area: Shoe_desc_cont;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+}
+
+.User_file_cont { 
+	
+}
+.submition_cont { 
+	grid-area: submition_cont;
+	display: flex;
+	justify-content: center;
+}
+
+input{
+		width: calc(95% - 2px);
+    text-decoration: none;
+    border: none;
+    padding: 0 0 0 8px;
+    background-color: inherit;
+}
+textarea{
+	width: 90%;
+	margin-top: 10px ;
+    background-color: inherit;
+	text-decoration: none;
+	font-family: 'Montserrat', sans-serif;
+    border: 2px dotted ;
+	font-size: 12pt;
+	font-weight: 600;
+    outline: none;
+    resize: none;
+    height: 100%;
+    border-radius: 4px;
+}
+
+.User_name, .User_Surname, .User_cont{
+	max-height: 30px;
+	font-size: 14pt;
+	font-family: 'Montserrat', sans-serif;
+	margin-top: 8px;
+	height: 70%;
+	border-radius: 4px;
+	border: 2px dotted ;
+}
+.User_cont::placeholder{
+	font-size: 11pt;
+}
+.User_name:focus, .User_Surname:focus, .User_cont:focus,textarea:focus{
+	background-color: white;
+    transition: all 0.7s ease-in-out;
+}
+/*===*/
+.User_file_cont {
+	align-self: flex-end;
+	grid-area: User_file_cont;
+	position: relative;
+}
+.input-file-btn {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	outline: none;
+	text-decoration: none;
+	font-size: 14px;
+	vertical-align: middle;
+	color: rgb(255 255 255);
+	text-align: center;
+	border-radius: 4px;
+	background-color: #419152;
+	line-height: 22px;
+	height: 40px;
+	padding: 10px 20px;
+	box-sizing: border-box;
+	border: none;
+	margin: 0;
+	transition: background-color 0.2s;
+}
+.input-file-text {
+	padding: 0 10px;
+	line-height: 40px;
+	display: inline-block;
+}
+.input-file input[type=file] {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+	display: block;
+	width: 0;
+	height: 0;
+}
+ 
+/* Focus */
+.input-file input[type=file]:focus + .input-file-btn {
+	box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+ 
+/* Hover/active */
+.input-file:hover .input-file-btn {
+	background-color: #59be6e;
+}
+.input-file:active .input-file-btn {
+	background-color: #2E703A;
+}
+ 
+/* Disabled */
+.input-file input[type=file]:disabled + .input-file-btn {
+	background-color: #eee;
+}
+/*===*/
+
+
+/*******/
+.submition_cont {
+    width: 152px;
+    text-align: center;
+    position:relative;
+    height: 40px;
+    left:50%;
+    margin-top:20px;
+    transform:translate(-50%,-50%)
+}
+.submition_cont input{
+		padding: 0;
+    text-decoration: none;
+    color: #000;
+    border: none;
+    position: relative;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 3px;
+    cursor: pointer;
+}
+
+.submition_cont::after,
+.submition_cont::before {
+    width: calc(100% );
+    height: calc(100%);
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 3px solid #111;
+    transition: transform 0.2s;
+}
+
+.submition_cont::after {
+  transform: translate(5px, -4px);
+}
+
+.submition_cont::before {
+  transform: translate(-5px,4px);
+}
+
+.submition_cont:hover::after,
+.submition_cont:hover::before {
+  transform: translate(-1px, -1px);
+}
+/*******/
+.footer_wrap{
+	border-top: 5px dotted;
+	min-height: 300px;
+	height: 300px;
+	max-height: 400px;
+	width: 100%;
+
+}
+.notes{  
+	width: calc(100% - 40px);
+	padding: 20px;
+	height: calc(100% - 40px);
+	font-family: 'Montserrat', sans-serif;
+	border-radius: 12px;
+	display: grid;
+	grid-template-columns: 1fr 30% 20%;
+	grid-template-rows: 1fr 10%;
+	grid-auto-columns: 1fr;
+	grid-auto-rows: 1fr;
+	gap: 6% 6%;
+	grid-auto-flow: row;
+	grid-template-areas:
+	"company_info contacts social_links"
+	"rights rights rights";
+	line-height: 1.6em;
+    color: black;
+    font-size: 13pt;
+}
+.notes h4{
+    color: black;
+    font-weight: bold;
+    font-size: 16pt;
+}
+.company_info { 
+	padding: 10px;
+	grid-area: company_info;
+	border: 2px solid;
+	background: rgb(231,239,249);
+	background: linear-gradient(180deg, rgba(231,239,249,1) 0%, rgba(207,219,246,1) 100%);
+}
+
+.social_links { 
+	padding: 10px;
+	border: 2px solid;
+	grid-area: social_links;
+	background: rgb(231,239,249);
+	background: linear-gradient(180deg, rgba(231,239,249,1) 0%, rgba(207,219,246,1) 100%);
+	background-color: white;
+}
+.social_links ul{
+	padding: 10%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: row;
+}
+.social_links li{
+	width: 40px;
+	height: 40px;
+}
+.social_links svg{
+	opacity: 0.6;
+	width: 100%;
+	width: 100%;
+}
+.social_links svg:hover{
+	opacity: 1;
+	scale: 1.2;
+	transition: all 0.6s;
+}
+.contacts { 
+	padding: 10px;
+	border: 2px solid;
+	background-color: white;
+	grid-area: contacts;
+	background: rgb(231,239,249);
+	background: linear-gradient(180deg, rgba(231,239,249,1) 0%, rgba(207,219,246,1) 100%);
+}
+
+.rights { 
+	font-size: 8pt;
+	border: 2px solid;
+	background: rgb(231,239,249);
+	background: linear-gradient(180deg, rgba(231,239,249,1) 0%, rgba(207,219,246,1) 100%);
+	background-color: white;
+	grid-area: rights;
+}
+/*=======================FOOTER=======================*/
+
+@media screen and (min-width:320px) and (max-width:1000px){ /*Телефонная раскладка*/
+	.input-file-btn{
+		font-size: 12pt;
+	}
+	.submition_cont{
+		width: 100px;
+    	text-align: center;
+    	position:relative;
+    	height:25px;
+		font-size: 12pt;
+	}
+	.order_card { 
+	padding: 10px;
+	font-family: 'Raleway', sans-serif;
+	background: rgb(61,115,104);
+	background: linear-gradient(0, rgba(61,115,104,1) 0%, rgba(233,188,183,1) 100%);
+	font-size: 15pt;
+	box-shadow: 0 0 10px rgba(0,0,0,1);
+	opacity: 1;
+	width: 70%;
+	min-height: 80%;
+	backdrop-filter: blur(20px) saturate(200%);
+	background-color: rgba(255, 255, 255, 0.38);
+	border-radius: 12px;
+	border: 1px solid rgba(209, 213, 219, 0.3);	 
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 9% 1fr 1fr calc(40% - 20px) 15%;
+	grid-auto-columns: 1fr;
+	grid-auto-rows: 1fr;
+	gap: 3% 3%;
+	grid-auto-flow: row;
+	}
+	.Order_title {
+		grid-area: Order_title;
+		font-size: 1.3em;
+		text-align: center;
+	}
+	.hamburger-menu{
+		opacity: 1;
+	}
+	.nav_panel{
+		width: 0;
+		height: 0;
+		opacity: 0;
+	}
+}
